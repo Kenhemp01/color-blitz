@@ -1,5 +1,7 @@
 # Color Blitz 🧠
 
+Play here: https://kenhemp01.github.io/color-blitz/
+
 #### Color Blitz is part of a larger web-based application (not yet finished) that features a variety of games designed for children ages 5 to 10. Color Blitz is a color-based memory game inspired by Simon Says, where players must memorize and repeat a randomized sequence of colors.
 
 The game includes two difficulty levels:
