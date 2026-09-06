@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Color Blitz</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="blitz.js" defer charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+  </style>
+
+</head>
+
+<body>
+
+  <body>
+
+    <div id="start-screen">
+
+      <div id="start-box">
+
+        <h1>
+          <strong>COLOR</strong>
+          <strong>BLITZ</strong>
+        </h1>
+
+        <p class="game-subtitle">
+          C - O - L - O - R &nbsp; B - L - I - T - Z
+        </p>
+
+        <div class="instructions">
+          <p>Watch the colors!</p>
+          <p>Remember the order.</p>
+          <p>Tap the colors you saw.</p>
+          <p>Keep going!</p>
+        </div>
+
+        <!-- MODE SELECTOR -->
+        <div class="mode-selector">
+          <p>CHOOSE YOUR MODE</p>
+
+          <label class="mode-option">
+            <input type="radio" name="game-mode" value="easy" checked>
+            <span>Easy</span>
+          </label>
+
+          <label class="mode-option">
+            <input type="radio" name="game-mode" value="hard">
+            <span>Hard</span>
+          </label>
+        </div>
+
+        <button id="start-button">START GAME</button>
+
+      </div>
+
+    </div>
+
+    <div id="game-over-screen" style="display: none;">
+
+      <div id="game-over-box">
+
+        <h1>TRY AGAIN!</h1>
+
+        <p>Oops! You picked the wrong color.</p>
+        <p>Let's try again!</p>
+
+        <button id="try-again-button">TRY AGAIN</button>
+
+      </div>
+
+    </div>
+
+    <div class="grid-container">
+      <div type="button" id="green" class="btn green"> </div>
+      <div type="button" id="red" class="btn red"> </div>
+      <div type="button" id="yellow" class="btn yellow"> </div>
+      <div type="button" id="blue" class="btn blue"> </div>
+      <div type="button" id="orange" class="btn orange"> </div>
+      <div type="button" id="purple" class="btn purple"> </div>
+    </div>
+
+  </body>
+
+</html>
