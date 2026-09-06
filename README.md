@@ -1,11 +1,12 @@
-# Color Blitz :red_circle: :large_blue_circle:
+# Color Blitz 🧠
 
 #### Color Blitz is part of a larger web-based application (not yet finished) that features a variety of games designed for children ages 5 to 10. Color Blitz is a color-based memory game inspired by Simon Says, where players must memorize and repeat a randomized sequence of colors.
 
 The game includes two difficulty levels:
 
-* **Easy Mode:** Uses four colors—red, green, yellow, and blue.
-* **Hard Mode:** Uses six colors—red, green, yellow, blue, orange, and purple.
+🔴🟢🟡🔵 **Easy Mode:** Uses four colors—red, green, yellow, and blue.
+
+🟠🟣 **Hard Mode:** Uses six colors—red, green, yellow, blue, orange, and purple.
 
 Each color is accompanied by a unique audio cue that repeats the color's name when it appears in the sequence. This audio feature is designed to help children identify and distinguish the colors while reinforcing their ability to remember the sequence.
 ### Technology Stack
