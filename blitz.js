@@ -96,10 +96,10 @@ function nextSequence() {
 async function playSequence() {
     playerTurn = false;
 
-    for (let i = 0; i < gamePattern.length; i++) {
-        await flashColor(gamePattern[i]);
+    for (const color of gamePattern) {
+        await flashColor(color);
 
-        // Small pause between colors
+        // Small gap between colors
         await sleep(200);
     }
 
@@ -113,20 +113,24 @@ function flashColor(color) {
         const button = document.getElementById(color);
         const sound = sounds[color];
 
-        // Stop this color's previous audio
+        // Stop any currently playing color sound
         sound.pause();
         sound.currentTime = 0;
-        sound.play();
+
+        sound.play().catch(function(error) {
+            console.log("Audio could not play:", error);
+        });
+
         button.classList.add("pressed");
 
+        // Remove the glow after 400ms
         setTimeout(function() {
             button.classList.remove("pressed");
         }, 400);
 
-        // Wait for the audio to finish before continuing
-        sound.onended = function() {
+        setTimeout(function() {
             resolve();
-        };
+        }, 700);
     });
 }
 
