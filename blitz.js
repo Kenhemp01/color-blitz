@@ -94,50 +94,39 @@ function nextSequence() {
 }
 
 async function playSequence() {
-
-    await sleep(500);
+    playerTurn = false;
 
     for (let i = 0; i < gamePattern.length; i++) {
+        await flashColor(gamePattern[i]);
 
-        const color = gamePattern[i];
-
-        await flashColor(color);
-
-        await sleep(250);
+        // Small pause between colors
+        await sleep(200);
     }
 
     playerTurn = true;
-
-    console.log("Your turn!");
 }
 
 
 
 function flashColor(color) {
-
-    return new Promise((resolve) => {
-
+    return new Promise(function(resolve) {
         const button = document.getElementById(color);
+        const sound = sounds[color];
 
-        sounds[color].currentTime = 0;
-        sounds[color].play();
-
+        // Stop this color's previous audio
+        sound.pause();
+        sound.currentTime = 0;
+        sound.play();
         button.classList.add("pressed");
 
-        button.style.filter = "brightness(2)";
-        button.style.boxShadow = "0 0 40px 15px white";
-
-        // Turn off the glow
-        setTimeout(() => {
-
+        setTimeout(function() {
             button.classList.remove("pressed");
-
-            button.style.filter = "";
-            button.style.boxShadow = "";
-
-            resolve();
-
         }, 400);
+
+        // Wait for the audio to finish before continuing
+        sound.onended = function() {
+            resolve();
+        };
     });
 }
 
@@ -241,7 +230,7 @@ function stopAllSounds() {
 }
 
 function sleep(milliseconds) {
-
-    return new Promise(resolve => setTimeout(resolve, milliseconds));
-
+    return new Promise(function(resolve) {
+        setTimeout(resolve, milliseconds);
+    });
 }
