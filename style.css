@@ -235,24 +235,38 @@ body {
   background-color: purple;
 }
 
+.pressed {
+    box-shadow: none;
+}
+
 .green.pressed {
-   box-shadow: 0 0 50px 20px green !important;
+    background-color: green !important;
+    box-shadow: 0 0 50px 20px green !important;
 }
 
 .red.pressed {
-  box-shadow: 0 0 40px 15px red;
+    background-color: red !important;
+    box-shadow: 0 0 50px 20px red !important;
 }
 
 .yellow.pressed {
-  box-shadow: 0 0 40px 15px yellow;
+    background-color: yellow !important;
+    box-shadow: 0 0 50px 20px yellow !important;
 }
 
 .blue.pressed {
-  box-shadow: 0 0 40px 15px blue;
+    background-color: blue !important;
+    box-shadow: 0 0 50px 20px blue !important;
 }
 
 .orange.pressed {
-  box-shadow: 0 0 40px 15px orange;
+    background-color: orange !important;
+    box-shadow: 0 0 50px 20px orange !important;
+}
+
+.purple.pressed {
+    background-color: purple !important;
+    box-shadow: 0 0 50px 20px purple !important;
 }
 
 .purple.pressed {
