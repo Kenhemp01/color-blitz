@@ -236,7 +236,6 @@ body {
 }
 
 .green.pressed {
-   background-color: white !important;
    box-shadow: 0 0 50px 20px green !important;
 }
 
