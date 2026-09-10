@@ -110,10 +110,11 @@ async function playSequence() {
 
 function flashColor(color) {
     return new Promise(function(resolve) {
+
         const button = document.getElementById(color);
         const sound = sounds[color];
 
-        // Stop any currently playing color sound
+        // Stop the color's previous audio
         sound.pause();
         sound.currentTime = 0;
 
@@ -121,13 +122,17 @@ function flashColor(color) {
             console.log("Audio could not play:", error);
         });
 
+        
         button.classList.add("pressed");
+        button.style.filter = "brightness(1.8)";
 
-        // Remove the glow after 400ms
+        
         setTimeout(function() {
             button.classList.remove("pressed");
+            button.style.filter = "";
         }, 400);
 
+    
         setTimeout(function() {
             resolve();
         }, 700);
@@ -178,20 +183,17 @@ function playerFlash(color) {
 
     const button = document.getElementById(color);
 
+    sounds[color].pause();
     sounds[color].currentTime = 0;
     sounds[color].play();
 
     button.classList.add("pressed");
-
     button.style.filter = "brightness(1.8)";
-    button.style.boxShadow = "0 0 30px 10px white";
 
-    setTimeout(function () {
+    setTimeout(function() {
 
         button.classList.remove("pressed");
-
         button.style.filter = "";
-        button.style.boxShadow = "";
 
     }, 200);
 }
